@@ -68,6 +68,10 @@ And(/^I click on Sepete Ekle button$/) do
   find_by_id('addToCart').click # sepete ekle butonuna tıklatılır
 end
 
+And(/^I click on Sepetim button$/) do
+  @home_page.clickSepetimButton
+end
+
 Then(/^Selected product's name is displayed in Sepet$/) do
 
   @sepetim_page = SepetimPage.new

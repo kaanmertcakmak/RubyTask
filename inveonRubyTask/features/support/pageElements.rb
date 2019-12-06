@@ -7,6 +7,7 @@ class HomePage < SitePrism::Page
   element :select_category_tab, "li[id='elektronik']"
   element :select_category, "a[data-title='Bilgisayar/Tablet']"
   element :logout_button, "a[class='logout']"
+  element :sepetim_button, "a[id='shoppingCart']"
 
   def clickonMyAccount
     myAccount_field.click
@@ -30,6 +31,10 @@ class HomePage < SitePrism::Page
 
   def clickLogoutButton
     logout_button.click
+  end
+
+  def clickSepetimButton
+    sepetim_button.click
   end
 end
 

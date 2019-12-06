@@ -17,10 +17,10 @@ Feature: Inveon QA Task
     Then I get result count of products
     When I clicked on first product from product results
     And I click on Sepete Ekle button
+    And I click on Sepetim button
     Then Selected product's name is displayed in Sepet
     And Delete product from Sepet
     And Logout
-
 
 
 

@@ -8,6 +8,9 @@ class HomePage < SitePrism::Page
   element :select_category, "a[data-title='Bilgisayar/Tablet']"
   element :logout_button, "a[class='logout']"
   element :sepetim_button, "a[id='shoppingCart']"
+  element :search_field, "input[id='productSearch']"
+  element :search_button, "button[id='buttonProductSearch']"
+  element :listelerim_button, "a[href='https://listelerim.hepsiburada.com/']"
 
   def clickonMyAccount
     myAccount_field.click
@@ -35,6 +38,18 @@ class HomePage < SitePrism::Page
 
   def clickSepetimButton
     sepetim_button.click
+  end
+
+  def searchSomeText(**attrs)
+    search_field.set attrs[:search_field]
+  end
+
+  def clickOnSearchButton
+    search_button.click
+  end
+
+  def clickOnListelerimButton
+    listelerim_button.click
   end
 end
 
@@ -70,6 +85,10 @@ class CategoryResultsPage < SitePrism::Page
     page.first("a[data-bind='click: clickHandler.bind($data)']").click
   end
 
+  def clickOntheFirstProductinSearchResults
+    page.first("a[data-bind='click: clickHandler.bind($data)']").click
+  end
+
   def clickOntheFirstProduct
     page.first("a[data-bind='click: clickHandler.bind($data)']").click
   end
@@ -78,6 +97,8 @@ end
 class SepetimPage < SitePrism::Page
   element :product_in_sepet, "h4.product-name>a"
   element :delete_product_in_sepet, "a[class^='btn-delete']"
+  element :listeme_ekle_button, :xpath, "//div[text()='Listeme ekle']"
+  element :daha_sonra_alacaklarim_button, :xpath, "//span[text()='Daha sonra alacaklarım']"
 
   def nameOfProductInSepet
     product_in_sepet.text
@@ -90,4 +111,33 @@ class SepetimPage < SitePrism::Page
   def deleteProductInSepet
     delete_product_in_sepet.click
   end
+
+  def clickOnListemeEkleButton
+    listeme_ekle_button.click
+  end
+  def clickOnDahaSonraAlacaklarimButton
+    daha_sonra_alacaklarim_button.click
+  end
+
+end
+
+class ListelerimPage < SitePrism::Page
+  element :daha_sonra_alacaklarim_field, "a[href='/daha-sonra-alacaklarim']"
+  element :product_name_in_my_lists, "div[class='product-title']"
+  element :product_image_in_my_lists, "div[class='product-image']"
+
+  def clickOnDahaSonraAlacaklarimField
+    daha_sonra_alacaklarim_field.click
+  end
+
+  def getProductNameInList
+    product_name_in_my_lists.text
+  end
+
+  def clickOnProductImageInList
+    product_image_in_my_lists.click
+  end
+
+
+
 end

@@ -23,4 +23,17 @@ Feature: Inveon QA Task
     And Logout
 
 
+  @AddingWishlist
+  Scenario: Add first product in search result to wishlist
+
+    When I search some text on the search field
+    When I clicked on first product from search results
+    And I click on Listeme Ekle button
+    And I click on Daha sonra alacaklarım button
+    And I click on Hesabım button
+    And I click on Tum Listelerim button
+    And I click on Daha sonra alacaklarım button again
+    And Selected product's name is displayed in Daha sonra alacaklarım page
+
+
 

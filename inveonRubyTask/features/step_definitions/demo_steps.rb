@@ -60,6 +60,11 @@ When(/^I clicked on first product from product results$/) do
   @selected_category_page.clickOntheFirstProductinResultsPage  # açılan sayfadaki ilk ürüne tıklatılır
 end
 
+When(/^I clicked on first product from search results$/) do
+  search_results_page = CategoryResultsPage.new
+  search_results_page.clickOntheFirstProductinSearchResults  # açılan sayfadaki ilk ürüne tıklatılır
+end
+
 
 And(/^I click on Sepete Ekle button$/) do
 
@@ -84,9 +89,47 @@ Then(/^Selected product's name is displayed in Sepet$/) do
 end
 
 And(/^Delete product from Sepet$/) do
-
   page.go_back
   @sepetim_page.deleteProductInSepet #Test tekrar tekrar koşturulduğunda, sepette hali hazırda aynı ürün olmasın diye testin sonunda sepetteki ürün sepetten çıkartılır
+end
+
+When(/^I search some text on the search field$/) do
+  @search_text = @data["DataSet1"]["searchText"]
+  @home_page.searchSomeText(search_field: @search_text)
+  @home_page.clickOnSearchButton
+end
+
+When(/^I click on Listeme Ekle button$/) do
+  @selected_product_page = CategoryResultsPage.new
+  @product_page = SepetimPage.new
+  @product_name_about_to_be_list = @selected_product_page.nameOfTheSelectedProduct
+  puts @product_name_about_to_be_list
+  @product_page.clickOnListemeEkleButton
+end
+
+And(/^I click on Daha sonra alacaklarım button$/) do
+  @product_page.clickOnDahaSonraAlacaklarimButton
+end
+
+And(/^I click on Hesabım button$/) do
+  page = HomePage.new
+  page.clickonMyAccount
+end
+
+And(/^I click on Tum Listelerim button$/) do
+  @home_page.clickOnListelerimButton
+end
+
+And(/^I click on Daha sonra alacaklarım button again$/) do
+  @listelerim_page = ListelerimPage.new
+  @listelerim_page.clickOnDahaSonraAlacaklarimField
+end
+
+And(/^Selected product's name is displayed in Daha sonra alacaklarım page$/) do
+  productInList = @listelerim_page.getProductNameInList
+  @listelerim_page.clickOnProductImageInList
+  puts productInList
+  expect(productInList).to eql(@product_name_about_to_be_list)
 end
 
 And(/^Logout$/) do

@@ -62,6 +62,7 @@ GEM
     gherkin (8.2.1)
       cucumber-messages (~> 7.0, >= 7.0.0)
     gherkin3 (3.1.2)
+    google-protobuf (3.8.0)
     google-protobuf (3.8.0-x64-mingw32)
     http-accept (1.7.0)
     http-cookie (1.0.3)
@@ -82,6 +83,8 @@ GEM
     multi_json (1.14.1)
     multi_test (0.1.2)
     netrc (0.11.0)
+    nokogiri (1.10.7)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.7-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     page-object (2.2.6)
@@ -101,10 +104,15 @@ GEM
       rack (>= 1.0, < 3)
     rainbow (3.0.0)
     rake (13.0.1)
-    redcarpet (3.5.0)
+    redcarpet (3.5.1)
     regexp_parser (1.6.0)
     report_builder (1.8)
       json (>= 1.8.1)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rest-client (2.1.0-x64-mingw32)
       ffi (~> 1.9)
       http-accept (>= 1.7.0, < 2.0)
@@ -167,6 +175,7 @@ GEM
     zeitwerk (2.2.2)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES

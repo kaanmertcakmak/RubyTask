@@ -7,8 +7,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
-    addressable (2.7.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     ast (2.4.0)
@@ -63,6 +63,7 @@ GEM
       cucumber-messages (~> 7.0, >= 7.0.0)
     gherkin3 (3.1.2)
     google-protobuf (3.8.0-x64-mingw32)
+    google-protobuf (3.8.0-x86_64-linux)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -82,6 +83,8 @@ GEM
     multi_json (1.14.1)
     multi_test (0.1.2)
     netrc (0.11.0)
+    nokogiri (1.10.7)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.7-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     page-object (2.2.6)
@@ -95,7 +98,7 @@ GEM
       parallel
     parser (2.6.5.0)
       ast (~> 2.4.0)
-    public_suffix (4.0.1)
+    public_suffix (5.0.0)
     rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -105,6 +108,11 @@ GEM
     regexp_parser (1.6.0)
     report_builder (1.8)
       json (>= 1.8.1)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rest-client (2.1.0-x64-mingw32)
       ffi (~> 1.9)
       http-accept (>= 1.7.0, < 2.0)
@@ -168,6 +176,7 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   capybara
